@@ -1,0 +1,42 @@
+.core-attributes{
+	width:50%;
+}
+table{
+	table-layout: fixed;
+	width:50%;
+	border-spacing: 8px;
+}
+
+td{
+	position:relative;
+	text-align: center;
+	width:3em;
+	overflow:visible;
+	border:2px solid black;
+}
+
+.hover-box{
+	background-color: white;
+	border:1px solid black;
+	position:absolute;
+	left:100%;
+	top:0;
+	z-index: 5;
+}
+
+th{
+	color:white;
+	background-color: black;
+	font-weight: normal;
+	font-size:18px;
+}
+
+.labels{
+	font-size:10px;
+	border:none;
+}
+
+p{
+	margin:0;
+	padding:0;
+}
