@@ -26,10 +26,8 @@ class attributeBox extends React.Component{
 			<td
 				onMouseEnter={this.handleMouseHover}
 				onMouseLeave={this.handleMouseHover}
-				>{this.props.pcAtt.mods ?
-					this.props.pcAtt.base+this.props.pcAtt.mods.fromRace:
-					this.props.pcAtt.base
-				}{this.state.mouseHovering &&
+				>{this.props.pcAtt.base+this.props.pcAtt.mods.fromRace}
+				{this.state.mouseHovering &&
 					<HoverBox attElem = {this.props.pcAtt}/>
 				}
 			</td>
@@ -37,7 +35,4 @@ class attributeBox extends React.Component{
 	}
 }
 
-// {this.props.pcAtt.mods.fromRace ?
-// 					{this.props.pcAtt.base+this.props.pcAtt.mods.fromRace}:
-// 					{this.props.pcAtt.base}
 export default attributeBox

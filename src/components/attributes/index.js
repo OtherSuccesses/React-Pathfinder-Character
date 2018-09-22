@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import HoverBox from '../hoverBox';
 import AttributeBox from '../attributeBox';
+import AttributeMod from '../attributeMod'
 
 class attributes extends React.Component{
 	constructor(props){
@@ -42,7 +43,7 @@ class attributes extends React.Component{
 						<p className="labels">Strength</p>
 						</th>
 						<AttributeBox pcAtt={this.props.player.scores.strength} attribute="strength"/>
-						<td></td>
+						<AttributeMod attMod={this.props.player.scores.strength.modifier}/>
 						<td></td>
 						<td></td>
 					</tr>
@@ -51,7 +52,7 @@ class attributes extends React.Component{
 						<p className="labels">Dexterity</p>
 						</th>
 						<AttributeBox pcAtt={this.props.player.scores.dexterity} attribute="dexterity"/>
-						<td></td>
+						<AttributeMod attMod={this.props.player.scores.dexterity.modifier}/>
 						<td></td>
 						<td></td>
 					</tr>
@@ -60,7 +61,7 @@ class attributes extends React.Component{
 						<p className="labels">Constitution</p>
 						</th>
 						<AttributeBox pcAtt={this.props.player.scores.constitution} attribute="constitution"/>
-						<td></td>
+						<AttributeMod attMod={this.props.player.scores.constitution.modifier}/>
 						<td></td>
 						<td></td>
 					</tr>
@@ -69,7 +70,7 @@ class attributes extends React.Component{
 						<p className="labels">Intelligence</p>
 						</th>
 						<AttributeBox pcAtt={this.props.player.scores.intelligence} attribute="intelligence"/>
-						<td></td>
+						<AttributeMod attMod={this.props.player.scores.intelligence.modifier}/>
 						<td></td>
 						<td></td>
 					</tr>
@@ -78,7 +79,7 @@ class attributes extends React.Component{
 						<p className="labels">Wisdom</p>
 						</th>
 						<AttributeBox pcAtt={this.props.player.scores.wisdom} attribute="wisdom"/>
-						<td></td>
+						<AttributeMod attMod={this.props.player.scores.wisdom.modifier}/>
 						<td></td>
 						<td></td>
 					</tr>
@@ -87,7 +88,7 @@ class attributes extends React.Component{
 						<p className="labels">Charisma</p>
 						</th>
 						<AttributeBox pcAtt={this.props.player.scores.charisma} attribute="charisma"/>
-						<td></td>
+						<AttributeMod attMod={this.props.player.scores.charisma.modifier}/>
 						<td></td>
 						<td></td>
 					</tr>

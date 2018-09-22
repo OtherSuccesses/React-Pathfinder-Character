@@ -53,6 +53,7 @@ componentDidMount(){
                 </div>
                 <div className='basic-data-cell' id='size-cell'>
                   <div className='basic-data-line' id='size-line'>
+                  {this.props.player.size}
                   </div>
                   <div className='basic-label'>
                     Size
@@ -60,6 +61,7 @@ componentDidMount(){
                 </div>
                 <div className='basic-data-cell' id='gender-cell'>
                   <div className='basic-data-line' id='gender-line'>
+                  {this.props.player.gender}
                   </div>
                   <div className='basic-label'>
                     Gender
@@ -103,6 +105,7 @@ componentDidMount(){
               <div className='basic-row'>
                 <div className='basic-data-cell' id='height-cell'>
                   <div className='basic-data-line' id='height-line'>
+                  {this.props.player.physical.height}
                   </div>
                   <div className='basic-label'>
                     Height
@@ -110,6 +113,7 @@ componentDidMount(){
                 </div>
                 <div className='basic-data-cell' id='weight-cell'>
                   <div className='basic-data-line' id='weight-line'>
+                  {this.props.player.physical.weight}
                   </div>
                   <div className='basic-label'>
                     Weight

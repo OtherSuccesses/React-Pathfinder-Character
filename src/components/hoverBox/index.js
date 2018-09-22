@@ -14,8 +14,9 @@ class hoverBox extends React.Component{
 		return(
 			<div>
 				<div className='hover-box'>
-					It's a hover BOX.
-					Check it out!
+					<p>Base: {this.props.attElem.base}</p> 
+					{this.props.attElem.mods.fromRace ? 
+						<p>From Race: {this.props.attElem.mods.fromRace}</p>:null}
 				</div>
 			</div>
 		)

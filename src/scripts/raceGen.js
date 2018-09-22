@@ -81,21 +81,123 @@ export function scoreAdjust(race, scores){
 	return scores;
 }
 
-	function randAbility(){
-		let die = baseFunction.roll(6);
-		switch (die){
-			case 1:
-				return "strength";
-			case 2:
-				return "dexterity";
-			case 3:
-				return "constitution";
-			case 4:
-				return "intelligence";
-			case 5:
-				return "wisdom";
-			default:
-				return "charisma";
+function randAbility(){
+	let die = baseFunction.roll(6);
+	switch (die){
+		case 1:
+			return "strength";
+		case 2:
+			return "dexterity";
+		case 3:
+			return "constitution";
+		case 4:
+			return "intelligence";
+		case 5:
+			return "wisdom";
+		default:
+			return "charisma";
 	}
+}
 
+export function size(race){
+	if (race == "Halfling" || race == "Gnome"){
+		return "Small"
+	}
+	else{
+		return "Medium"
+	}
+}
+
+export function heightAndWeight(race, gender){
+	let physical ={
+		height: 0,
+		weight: 0} 
+	switch (race){
+		case "Dwarf":{
+			if (gender == "Female"){
+				physical = hAndWCalc(43, 120, 2, 4, 7);
+			}
+			else{
+				physical = hAndWCalc(45, 150, 2, 4, 7);
+			}
+			return physical;
+		}
+		case "Human":{
+			if (gender == "Female"){
+				physical = hAndWCalc(53, 85, 2, 10, 5);
+			}
+			else{
+				physical = hAndWCalc(58, 120, 2, 10, 5);
+			}
+			return physical;
+		}
+		case "Elf":{
+			if (gender == "Female"){
+				physical = hAndWCalc(64, 90, 2, 6, 3);
+			}
+			else{
+				physical = hAndWCalc(64, 100, 2, 8, 3);
+			}
+			return physical;
+		}
+		case "Gnome":{
+			if (gender == "Female"){
+				physical = hAndWCalc(34, 30, 2, 4, 1);
+			}
+			else{
+				physical = hAndWCalc(36, 35, 2, 4, 1);
+			}
+			return physical;
+		}
+		case "Half-Elf":{
+			if (gender == "Female"){
+				physical = hAndWCalc(60, 90, 2, 8, 5);
+			}
+			else{
+				physical = hAndWCalc(62, 110, 2, 8, 5);
+			}
+			return physical;
+		}
+		case "Half-Orc":{
+			if (gender == "Female"){
+				physical = hAndWCalc(53, 110, 2, 12, 7);
+			}
+			else{
+				physical = hAndWCalc(58, 150, 2, 12, 7);
+			}
+			return physical;
+		}
+		case "Halfling":{
+			if (gender == "Female"){
+				physical = hAndWCalc(30, 25, 2, 4, 1);
+			}
+			else{
+				physical = hAndWCalc(32, 30, 2, 4, 1);
+			}
+			return physical;
+		}
+
+	}
+}
+
+function hAndWCalc(baseH, baseW, modMult, modType, weightMod){
+	let physical = {height:0,
+		weight:0};
+	let add = 0;
+	let height = 0;
+
+	for (let i=0; i < modMult; i++){
+		add += baseFunction.roll(modType);
+	}
+	height = baseH + add;
+	let feet = Math.floor(height/12) + "' ";
+	let inches = height % 12 + '"';
+	if (height % 12==0){
+		physical.height = feet;
+	}
+	else{
+		physical.height = feet + inches;
+	}
+	physical.weight = baseW + (add * weightMod);
+	return physical;
 }

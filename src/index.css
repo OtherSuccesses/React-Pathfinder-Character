@@ -183,3 +183,10 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
+
+.hover-box {
+  display:block;
+  height: auto;
+  padding: 15px;
+  width: auto;
+}

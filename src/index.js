@@ -85,8 +85,10 @@ class Game extends React.Component {
         age: null,
         deity: null,
         homeland: null,
-        height: null,
-        weight: null,
+        physical:{
+          height: null,
+          weight: null
+        },
         hair: null,
         eyes: null,
         scores:{
@@ -94,37 +96,43 @@ class Game extends React.Component {
             base: '',
             mods:{
               fromRace: ''
-            }
+            },
+            modifier:0
           },
           dexterity: {
             base: '',
             mods:{
               fromRace: ''
-            }
+            },
+            modifier:0
           },
           constitution: {
             base: '',
             mods:{
               fromRace: ''
-            }
+            },
+            modifier:0
           },
           intelligence: {
             base: '',
             mods:{
               fromRace: ''
-            }
+            },
+            modifier:0
           },
           wisdom: {
             base: '',
             mods:{
               fromRace: ''
-            }
+            },
+            modifier:0
           },
           charisma: {
             base: '',
             mods:{
               fromRace: ''
-            }
+            },
+            modifier:0
           }
         }
       }
@@ -138,8 +146,6 @@ class Game extends React.Component {
     this.setState({
       player,
     });
-
-    console.log(this.state.alignment);
     console.log(this.state);
   }
 
