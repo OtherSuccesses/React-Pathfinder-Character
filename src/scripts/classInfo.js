@@ -210,4 +210,4 @@ let classList = [
 		}
 	}];
 
-export classList;
+export {classList};

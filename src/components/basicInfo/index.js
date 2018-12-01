@@ -36,6 +36,7 @@ componentDidMount(){
               <div className='basic-row'>
                 <div className='basic-data-cell' id='class-cell'>
                   <div className='basic-data-line' id='class-line'>
+                  {this.props.player.pcClass}
                   </div>
                   <div className='basic-label'>
                     Class and Level
@@ -69,6 +70,7 @@ componentDidMount(){
                 </div>
                 <div className='basic-data-cell' id='age-cell'>
                   <div className='basic-data-line' id='age-line'>
+                  {this.props.player.age}
                   </div>
                   <div className='basic-label'>
                     Age

@@ -3,7 +3,15 @@ import * as raceGen from './scripts/raceGen.js';
 import * as classGen from './scripts/classGen.js';
 
 export function roll(max){
+	if (arguments[1]){
+		let sum = Math.ceil(Math.random()*max);
+		for (let i = 1; i < arguments[1]; i++){
+			sum += Math.ceil(Math.random()*max)
+		}
+		return sum;
+	}
 	return Math.ceil(Math.random()*max)
+	
 }
 
 export function newCharacter() {
@@ -72,6 +80,7 @@ export function newCharacter() {
 		player.scores[attribute].modifier=calculateMod(player.scores[attribute].base+player.scores[attribute].mods.fromRace);
 	}
 	player.pcClass = classGen.selectClass(player.scores);
+	player.age = raceGen.age(player.race, player.pcClass);
 	return player;
 }
 

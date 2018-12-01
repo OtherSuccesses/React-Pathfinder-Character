@@ -201,3 +201,106 @@ function hAndWCalc(baseH, baseW, modMult, modType, weightMod){
 	physical.weight = baseW + (add * weightMod);
 	return physical;
 }
+
+export function age(race, pcClass){
+	let age = 10;
+	let intuitive = ["Barbarian", "Rogue", "Sorceror"];
+	let taught = ["Bard", "Fighter", "Paladin", "Ranger"];
+	let trained = ["Cleric", "Druid", "Monk", "Wizard"];
+	switch(race){
+		case "Human":{
+			age = 15;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(4);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6);
+			}
+			else{
+				age += baseFunction.roll(6, 2);
+			}
+			return age;
+		}
+		case "Dwarf":{
+			age = 40;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(6, 3);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6, 5);
+			}
+			else{
+				age += baseFunction.roll(6, 7);
+			}
+			return age;
+		}
+		case "Elf":{
+			age = 110;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(6, 4);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6, 6);
+			}
+			else{
+				age += baseFunction.roll(6, 10);
+			}
+			return age;
+		}
+		case "Gnome":{
+			age = 40;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(6, 4);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6, 6);
+			}
+			else{
+				age += baseFunction.roll(6, 9);
+			}
+			return age;
+		}
+		case "Half-Elf":{
+			age = 20;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(6);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6, 2);
+			}
+			else{
+				age += baseFunction.roll(6, 3);
+			}
+			return age;
+		}
+		case "Half-Orc":{
+			age = 14;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(4);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6);
+			}
+			else{
+				age += baseFunction.roll(6, 2);
+			}
+			return age;
+		}
+		case "Halfling":{
+			age = 20;
+			if (intuitive.includes(pcClass)){
+				age += baseFunction.roll(4, 2);
+			}
+			else if (taught.includes(pcClass)){
+				age += baseFunction.roll(6, 3);
+			}
+			else{
+				age += baseFunction.roll(6, 4);
+			}
+			return age;
+		}
+		default:{
+			return "Problem!!!";
+		}
+	}
+}
