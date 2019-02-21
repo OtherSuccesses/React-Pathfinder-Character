@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import HoverBox from '../hoverBox';
 import AttributeBox from '../attributeBox';
-import AttributeMod from '../attributeMod'
+import AttributeMod from '../attributeMod';
 
 class attributes extends React.Component{
 	constructor(props){
@@ -93,8 +92,50 @@ class attributes extends React.Component{
 						<td></td>
 					</tr>
 				</table>
-			</div>
-			<div className='hp-initiative'>
+				<div className='hp-initiative'>
+					<div className='hp-row'>
+						<div className='hp-label'>
+							HP
+							<p className='labels'>Hit Points</p>
+						</div>
+						<div className='hp-total'>
+							<div className='hp-total-label'>
+								Total
+							</div>
+						</div>
+						<div className='dr-box'>
+							<div className='dr-box-label'>
+								DR
+							</div>
+						</div>
+					</div>
+					<div className='wound-block'>
+						<p className='labels'>Wounds/Current HP</p>
+						<div className='wound-box'>
+						</div>
+					</div>
+					<div className='nonlethal-block'>
+						<p className='labels'>Nonlethal Damage</p>
+						<div className='nonlethal-box'>
+						</div>
+					</div>
+					<div className='initiative-row'>
+						<div className='hp-label'>
+							Initiative
+							<p className='labels'>Modifier</p>
+						</div>
+						<div className='hp-total'>
+							<div className='hp-total-label'>
+								Total
+							</div>
+						</div>
+						<div className='dr-box'>
+							<div className='dr-box-label'>
+								DR
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		)

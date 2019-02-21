@@ -79,6 +79,11 @@ function attRangeForClassSelect(att){
 			}
 			let tempClass = "";
 			let selector = baseFunction.roll(wizard);
+			// let odds = {
+			// 	total : wizard,
+			// 	wizardProbability: (wizard - sorceror)/odds.total
+			// };
+			// console.log(odds);
 			console.log("The number for class gen: " + selector);
 			console.log(barbarian, bard, cleric, druid, fighter, monk, paladin, ranger, rogue, sorceror, wizard);
 

@@ -1,0 +1,25 @@
+.battleGame{
+	display:flex;
+}
+
+.Guy1{
+	margin:auto;
+}
+
+.Guy2{
+	margin:auto;
+}
+
+p{
+	margin:auto;
+}
+
+.box{
+	height:30px;
+	width:30px;
+}
+
+.message-display{
+	overflow: scroll;
+	height: 250px;
+}

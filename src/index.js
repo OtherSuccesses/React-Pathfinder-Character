@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import BasicInfo from './components/basicInfo'
 import './index.css';
 import * as newCharacter from './script.js';
-import Attributes from './components/attributes'
+import Attributes from './components/attributes';
+import BattleGame from './components/BattleGame';
 
 function Logo(props){
   return(
@@ -135,6 +136,12 @@ class Game extends React.Component {
             modifier:0
           }
         }
+      },
+      coreGame:{
+        player1: true,
+        p1Roll: 0,
+        player2: true,
+        p2Roll: 0
       }
     }
     this.characterGen = this.characterGen.bind(this)
@@ -146,29 +153,30 @@ class Game extends React.Component {
     this.setState({
       player,
     });
-    console.log(this.state);
+    setTimeout(() => console.log(this.state), 100);
   }
+
+
 
   render() {
     return (
       <div className="game">
-        <div className='top-section'>
-          <div className='header'>
-            <Logo src={require("./assets/img/pathfinder-logo.jpg")}  height={100}/>
-            <h1 className='header-label'>Character Sheet</h1>
+        <div classname="character">
+          <div className='top-section'>
+            <div className='header'>
+              <Logo src={require("./assets/img/pathfinder-logo.jpg")}  height={100}/>
+              <h1 className='header-label'>Character Sheet</h1>
+            </div>
+            <BasicInfo player={this.state.player}/>
           </div>
-          <BasicInfo player={this.state.player}/>
-        </div>
-        <div className="left-side">
-          <Attributes player={this.state.player}/>
+          <div className="left-side">
+            <Attributes player={this.state.player}/>
+          </div>
         </div>
         <button id='new-character-button' onClick={this.characterGen}>New Character</button>
-        <div className="game-board">
-          <Board />
-        </div>
-        <div className="game-info">
-          <div>{/* status */}</div>
-          <ol>{/* TODO */}</ol>
+        <div className="sub-game">
+          <BattleGame />
+          
         </div>
       </div>
     );
