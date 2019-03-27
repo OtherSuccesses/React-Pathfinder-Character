@@ -32,7 +32,7 @@ th{
 	font-size:18px;
 }
 
-.hp-row{
+.hp-row, .initiative-row{
 	display:flex;
 	margin-bottom: 4px;
 }
@@ -47,6 +47,23 @@ th{
 	height:50px;
 	border:2px solid black;
 	margin-bottom: 4px;
+}
+
+.init-label{
+	flex-grow: 3;
+	color: white;
+	background-color: black;
+	font-weight: normal;
+	font-size: 18px;
+	text-align: center
+}
+
+.init-total, .init-dex, .init-misc{
+	width: 3em;
+	flex-grow: 1;
+	border: 2px solid black;
+	margin-right: 5px;
+	margin-left: 5px;
 }
 
 .hp-initiative{

@@ -1,6 +1,5 @@
 import React from 'react';
 import './index.css';
-import HoverBox from '../hoverBox';
 import AttributeBox from '../attributeBox';
 import AttributeMod from '../attributeMod';
 
@@ -102,6 +101,7 @@ class attributes extends React.Component{
 							<div className='hp-total-label'>
 								Total
 							</div>
+							{this.props.player.hp}
 						</div>
 						<div className='dr-box'>
 							<div className='dr-box-label'>
@@ -120,21 +120,36 @@ class attributes extends React.Component{
 						</div>
 					</div>
 					<div className='initiative-row'>
-						<div className='hp-label'>
+						<div className='init-label'>
 							Initiative
 							<p className='labels'>Modifier</p>
 						</div>
-						<div className='hp-total'>
+						<div className='init-total'>
 							<div className='hp-total-label'>
 								Total
 							</div>
 						</div>
-						<div className='dr-box'>
+						=
+						<div className='init-dex'>
 							<div className='dr-box-label'>
-								DR
+								Dex Modifier
+							</div>
+						</div>
+						+
+						<div className='init-misc'>
+							<div className='dr-box-label'>
+								Misc Modifier
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className='AC-section'>
+				<div className='base-AC'>
+
+				</div>
+				<div className='other-AC'>
+
 				</div>
 			</div>
 		</div>

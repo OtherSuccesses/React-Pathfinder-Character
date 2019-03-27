@@ -92,6 +92,7 @@ class Game extends React.Component {
         },
         hair: null,
         eyes: null,
+        hp: null,
         scores:{
           strength: {
             base: '',
